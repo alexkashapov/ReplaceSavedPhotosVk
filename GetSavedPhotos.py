@@ -21,7 +21,7 @@ try:
         photos = json.dumps(vk.photos.get(owner_id = ownerId,album_id=fromAlbumId))
         photos_dict = json.loads(photos)
         countPhotos = photos_dict['count']
-        print('Итерация ', i,  '\nОсталось фото: ',countPhotos)
+        print('Итерация ', i+1,  '\nОсталось фото: ',countPhotos)
         photos_list = photos_dict['items']
         for photo in photos_list:
             vk.photos.move(owner_id=ownerId, target_album_id=toAlbumId,photo_id=photo['id'])
